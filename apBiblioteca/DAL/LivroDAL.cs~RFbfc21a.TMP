@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace apBiblioteca.DAL
+{
+	class LivroDAL
+	{
+		private string _conexaoSQLServer = "";
+		SqlConnection conexao = null;
+
+		public LivroDAL()
+		{
+			_conexaoSQLServer = $"Data Source=Regulus;Initial Catalog=BD19191;User ID=BD19191;Password={Security.Pass}";
+		}
+
+		public List<Livro> SelectListLivros()
+		{
+
+		}
+
+		public DataTable SelectLivros()
+		{
+			try
+			{
+				string sql = "select * from BibLivro";
+				conexao = new SqlConnection(_conexaoSQLServer);
+				var cmd = new SqlCommand(sql, conexao);
+				var da = new SqlDataAdapter();
+				var dt = new DataTable();
+			}
+			catch (Exception e)
+			{
+
+			}
+		}
+
+		public Livro SelectByID(int id)
+		{
+
+		}
+
+		public Livro SelectLivroByCodigo(string codigo)
+		{
+
+		}
+
+		public void InsertLivro(Livro livro)
+		{
+
+		}
+
+		public void UpdateLivro(Livro livro)
+		{
+
+		}
+
+		public void DeleteLivro(Livro livro)
+		{
+
+		}
+	}
+}
