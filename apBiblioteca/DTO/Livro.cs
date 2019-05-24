@@ -39,19 +39,19 @@ namespace apBiblioteca
 		public string CodigoLivro
 		{
 			get => codigoLivro;
-			set => codigoLivro = value.Remove(tamanhoCodigo).PadLeft(tamanhoCodigo, '0');
+			set => codigoLivro = value./*Remove(tamanhoCodigo).*/PadLeft(tamanhoCodigo, '0');
 		}
 
 		public string Titulolivro
 		{
 			get => titulolivro;
-			set => titulolivro = value.Remove(tamanhoTitulo).PadRight(tamanhoTitulo, ' ');
+			set => titulolivro = value./*Remove(tamanhoTitulo).*/PadRight(tamanhoTitulo, ' ');
 		}
 
 		public string AutorLivro
 		{
 			get => autorLivro;
-			set => autorLivro = value.Remove(tamanhoAutor).PadRight(tamanhoAutor, ' ');
+			set => autorLivro = value./*Remove(tamanhoAutor).*/PadRight(tamanhoAutor, ' ');
 		}
 	}
 }

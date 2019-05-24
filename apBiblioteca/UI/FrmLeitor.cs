@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace apBiblioteca
+namespace apBiblioteca.UI
 {
-	public partial class Form1 : Form
+	public partial class FrmLeitor : Form
 	{
-		public Form1()
+		public FrmLeitor()
 		{
 			InitializeComponent();
 		}

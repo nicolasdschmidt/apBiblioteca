@@ -8,7 +8,7 @@ namespace apBiblioteca
 {
 	class DALSecurity
 	{
-		private static string pass = "password";
+		private static string pass = "vermelh05%";
 
 		public static string Pass { get => pass; }
 	}

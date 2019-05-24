@@ -36,6 +36,7 @@ namespace apBiblioteca.DAL
 								listaLivros.Add(livro);
 							}
 						}
+						conn.Close();
 						return listaLivros;
 					}
 				}
@@ -46,7 +47,6 @@ namespace apBiblioteca.DAL
 			}
 			finally
 			{
-				connection.Close();
 			}
 		}
 
@@ -58,6 +58,7 @@ namespace apBiblioteca.DAL
 				conexao = new SqlConnection(_conexaoSQLServer);
 				var cmd = new SqlCommand(sql, conexao);
 				var da = new SqlDataAdapter();
+				da.SelectCommand = cmd;
 				var dt = new DataTable();
 				da.Fill(dt);
 
@@ -154,7 +155,7 @@ namespace apBiblioteca.DAL
 		{
 			try
 			{
-				string sql = "update BibLivro set codigoLivro = @id, @codigo, tituloLivro = @titulo, autorLivro = @autor where idLivro = @id";
+				string sql = "update BibLivro set codigoLivro = @codigo, tituloLivro = @titulo, autorLivro = @autor where idLivro = @id";
 				conexao = new SqlConnection(_conexaoSQLServer);
 				var cmd = new SqlCommand(sql, conexao);
 				cmd.Parameters.AddWithValue("@id", livro.IdLivro);
